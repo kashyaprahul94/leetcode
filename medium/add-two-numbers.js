@@ -17,6 +17,18 @@ ListNode.prototype.toString = function () {
   return result;
 }
 
+ListNode.prototype.toArray = function () {
+  let head = this;
+  const result = [];
+
+  while(head) {
+    result.push(head.val);
+    head = head.next;
+  }
+
+  return result;
+}
+
 /**
  * @param {ListNode} l1
  * @param {ListNode} l2
@@ -61,7 +73,7 @@ let l1, l2;
 l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
 l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
 
-console.log(addTwoNumbers(l1, l2));
+console.log(addTwoNumbers(l1, l2).toArray());
 
 l1 = new ListNode(9,
   new ListNode(9,
@@ -84,14 +96,14 @@ l2 = new ListNode(9,
   )
 );
 
-console.log(addTwoNumbers(l1, l2));
+console.log(addTwoNumbers(l1, l2).toArray());
 
 l1 = new ListNode(1, new ListNode(1));
 l2 = new ListNode(9, new ListNode(9, new ListNode(9)));
 
-console.log(addTwoNumbers(l1, l2));
+console.log(addTwoNumbers(l1, l2).toArray());
 
 l1 = new ListNode(0, new ListNode(0, new ListNode(1)));
 l2 = new ListNode(9);
 
-console.log(addTwoNumbers(l1, l2));
+console.log(addTwoNumbers(l1, l2).toArray());
